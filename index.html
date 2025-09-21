@@ -17,13 +17,20 @@
             --success: #28A745;        /* Green for positive actions */
         }
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+      
         
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
         body {
             background-color: var(--light);
             color: var(--dark);
@@ -266,6 +273,33 @@
         .badge:hover {
             transform: scale(1.05);
         }
+
+        /* Mobile / Tablet fix */
+@media (max-width: 768px) {
+  .trust-badges {
+    display: grid;
+    grid-template-columns: auto 1fr; /* icon | text */
+    gap: 12px 18px; /* row-gap | column-gap */
+    text-align: left;
+    justify-content: start;
+    padding-left: 20%;
+  }
+
+  .badge {
+    display: contents; /* grid ko layout control karne do */
+  }
+
+  .badge i {
+    font-size: 1rem;
+    align-self: center;
+    justify-self: center;
+  }
+
+  .badge span {
+    align-self: center;
+  }
+}
+
         
         /* Services Section */
         .section {
@@ -461,6 +495,47 @@
             margin: 20px 0;
             font-size: 1.4rem;
         }
+
+        /* USP Section Responsive */
+@media (max-width: 768px) {
+  .usp-card {
+    text-align: left; /* text left aligned */
+    padding: 30px 20px;
+  }
+
+  .usp-card h3 {
+    text-align: center; /* heading center aligned */
+    font-size: 1.2rem;
+  }
+
+  .usp-card p {
+    text-align: left; /* description left aligned */
+    font-size: 0.95rem;
+    padding-left: 20px;
+  }
+
+  .usp-icon {
+    display: block;
+    margin: 0 auto 20px auto; /* icon center align */
+    padding-left: 40%;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .usp-card {
+    padding: 25px 15px;
+  }
+
+  .usp-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .usp-card p {
+    font-size: 0.9rem;
+  }
+}
+
         
         /* Reviews Section */
         .reviews-grid {
@@ -755,6 +830,7 @@
             
             .trust-badges {
                 gap: 20px;
+                align-items: left;
             }
             
             .two-column-list {
@@ -775,6 +851,8 @@
                 font-size: 2.2rem;
             }
         }
+
+        
         
         /* Animation for elements */
         .animate-on-scroll {
@@ -794,7 +872,11 @@
     <header id="header">
         <div class="container header-content">
             <div class="logo">Ringsflux</div>
-            <a href="tel:+18445782868" class="call-btn"><i class="fas fa-phone"></i> Call {{PHONE}} — 24/7 Live Agents</a>
+            <a href="tel:+18445782868" class="call-btn">
+  <i class="fas fa-phone" style="margin-right:6px;"></i> 
+  Call — 24/7 Live Agents
+</a>
+
         </div>
     </header>
 
@@ -802,7 +884,7 @@
     <section class="hero">
         <div class="container hero-content">
             <h1>Emergency & Same-Day Electricians — Upfront Pricing, Fast Repairs.</h1>
-            <p>Licensed, insured professionals serving {{CITY}} and surrounding areas with 24/7 emergency service</p>
+            <p>Licensed, insured professionals serving and surrounding areas with 24/7 emergency service</p>
             <div class="cta-buttons">
                 <a href="tel:+18445782868" class="cta-primary"><i class="fas fa-phone"></i>  Call Us Now</a>
                 <!-- <a href="#services" class="cta-secondary"><i class="fas fa-clipboard-list"></i> View Our Services</a> -->
@@ -820,7 +902,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>Professional Electrical Services</h2>
-                <p>Comprehensive electrical solutions for homes and businesses in {{CITY}} and surrounding areas</p>
+                <p>Comprehensive electrical solutions for homes and businesses in and surrounding areas</p>
             </div>
             <div class="services-grid">
                <div class="service-card animate-on-scroll">
@@ -915,17 +997,17 @@
                 <div class="review-card animate-on-scroll">
                     <div class="stars">★★★★★</div>
                     <p class="review-text">"They responded quickly to my emergency call and fixed the electrical issue that had left half my house without power. Professional and fair pricing."</p>
-                    <p class="reviewer">— Michael T., {{CITY}}</p>
+                    <p class="reviewer">— Michael T., Islamabad</p>
                 </div>
                 <div class="review-card animate-on-scroll">
                     <div class="stars">★★★★★</div>
                     <p class="review-text">"The electrician was knowledgeable and courteous. Explained everything clearly and completed the panel upgrade faster than expected."</p>
-                    <p class="reviewer">— Sarah J., {{CITY}}</p>
+                    <p class="reviewer">— Sarah J., Lahore</p>
                 </div>
                 <div class="review-card animate-on-scroll">
                     <div class="stars">★★★★★</div>
                     <p class="review-text">"I needed outdoor lighting installed. They gave me a great quote and did beautiful work. Will definitely use them again for future projects."</p>
-                    <p class="reviewer">— Robert L., {{CITY}}</p>
+                    <p class="reviewer">— Robert L., Karachi</p>
                 </div>
             </div>
         </div>
